@@ -11,9 +11,11 @@ function roundCents(value) {
  * @param {number} percent  Discount percentage, e.g. 25 for 25%
  */
 function applyDiscount(price, percent) {
-  return roundCents(price * (1 - percent / 100));
+  if( !Number.isFinite(percent) || percent < 0 || percent > 100 ) {
+     throw new RangeError(`discount percent must be between 0 and 100, got ${percent}`);
+  }
+  return roundCents(price * (1 - percent / 100)) 
 }
-
 /** Add sales tax at the given rate, e.g. 0.13 for 13%. */
 function addTax(price, rate) {
   return roundCents(price * (1 + rate));

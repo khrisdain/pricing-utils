@@ -30,5 +30,5 @@ test('rejects a discount above 100%', () => {
 });
 
 test('rejects a negative discount', () => {
-  asserts.throws(() => applyDiscount(50, -10), RangeError);
+  assert.throws(() => applyDiscount(50, -10), RangeError);
 });

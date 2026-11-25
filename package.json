@@ -1,0 +1,13 @@
+{
+  "name": "pricing-utils",
+  "version": "1.0.0",
+  "description": "Small pricing helpers for an online store: discounts, tax and order totals.",
+  "main": "src/pricing.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

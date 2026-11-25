@@ -23,3 +23,12 @@ test('order total applies discount before tax', () => {
   ];
   assert.equal(orderTotal(items, { discountPercent: 10, taxRate: 0.13 }), 50.85);
 });
+
+//add some test
+test('rejects a discount above 100%', () => {
+  assert.throws(() => applyDiscount(50, 150), RangeError);
+});
+
+test('rejects a negative discount', () => {
+  asserts.throws(() => applyDiscount(50, -10), RangeError);
+});
